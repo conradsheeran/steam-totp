@@ -1,6 +1,6 @@
 {
  "name": "steam-totp",
- "version": "1.0.0",
+ "version": "1.0.1",
  "description": "Used to generate Steam mobile token verification code.",
  "main": "Index.ets",
  "author": "Yang He",

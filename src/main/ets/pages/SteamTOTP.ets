@@ -86,7 +86,7 @@ export class SteamTOTP {
    * @param tag - 标识请求的标签，例如 "conf"、"details"、"allow"、"cancel"
    * @returns {string}
    */
-  public static async generateConfirmationKey(identitySecret: buffer.Buffer | string, time: number, tag: string = ''): Promise<string> {
+  public static async generateConfirmationCode(identitySecret: buffer.Buffer | string, time: number, tag: string): Promise<string> {
     const secretBuffer: buffer.Buffer = SteamTOTP.SecretToBuffer(identitySecret);
 
     const data = buffer.alloc(8 + buffer.byteLength(tag));
