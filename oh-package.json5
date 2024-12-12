@@ -1,9 +1,12 @@
 {
  "name": "steam-totp",
- "version": "1.0.0",
- "description": "Used to generate Steam mobile token verification code.",
+ "version": "1.0.1",
+ "description": "A library developed using the ArkTS language to obtain Steam mobile authentication codes | 使用 ArkTS 语言开发的实现获取 Steam 手机令牌验证码的库",
  "main": "Index.ets",
  "author": "Yang He",
  "license": "GPL-3.0",
+ "keywords": ["steam", "totp", "totp-generator"],
+ "homepage": "https://github.com/conradsheeran",
+ "repository": "https://github.com/conradsheeran/steam-totp",
  "dependencies": {}
 }
