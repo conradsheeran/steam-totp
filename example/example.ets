@@ -1,4 +1,4 @@
-import { SteamTOTP } from "../pages/SteamTOTP"
+import { SteamTOTP } from "../src/main/ets/pages/SteamTOTP"
 import { BusinessError } from "@kit.BasicServicesKit";
 import { util } from "@kit.ArkTS";
 
@@ -24,6 +24,10 @@ getContext(this).resourceManager.getRawFileContent("765122925.maFile").then(asyn
   console.info(`code: ${(await SteamTOTP.generateAuthCode(steamSecret.shared_secret))}`)
 }).catch((e: BusinessError) => {
   console.error(`fatal: ${e.message}, ${e.code}`)
+})
+
+SteamTOTP.getTimeOffset().then((value) => {
+  console.info(`offset: ${value.offset}\nlatency: ${value.latency}`)
 })
 
 function bufferToString(buffer: Uint8Array): string {
