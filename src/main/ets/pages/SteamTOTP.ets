@@ -80,7 +80,7 @@ export class SteamTOTP {
 
       return code;
     } catch (e) {
-      throw new Error
+      throw new Error(`[steam-totp] generateAuthCode FATAL. [ message: ${e.message}]`)
     }
   }
 
@@ -105,7 +105,7 @@ export class SteamTOTP {
   }
 
   /**
-   * 从 Steam 服务器获取时间偏移量
+   * 从 Steam 服务器获取时间偏移量（注意：使用该函数需要获取 ohos.permission.INTERNET 权限）
    * @returns { Promise<{ offset: number; latency: number; }> }
    */
   public static async getTimeOffset(): Promise<ITimeOffsetInfo> {
@@ -121,7 +121,7 @@ export class SteamTOTP {
         try {
           const parsedResponse: IResponse = JSON.parse(response.result as string).response;
           if (!parsedResponse || !parsedResponse.server_time) {
-            throw new Error('响应格式错误');
+            throw new Error('[steam-totp] getTimeOffset: Response formatting error.');
           }
 
           const end = Date.now();
@@ -130,10 +130,10 @@ export class SteamTOTP {
 
           resolve(value);
         } catch (e) {
-          reject(new Error('响应解析失败'));
+          reject(new Error('[steam-totp] getTimeOffset: Response parsing failure.'));
         }
       }).catch((e: BusinessError) => {
-        //
+        reject(new Error(`[steam-totp] getTimeOffset: Create Http FATAL. [ code: ${e.code}, message: ${e.message} ]`));
       })
     });
   }

@@ -27,7 +27,7 @@ ohpm install steam-totp
 ohpm install path/to/steam-totp.har
 ```
 
-### 方法三: 在需要引入 steam-totp 的模块的 oh-package.json5 中设置依赖
+### 方法三: 在 oh-package.json5 中设置依赖
 
 ```json
 {

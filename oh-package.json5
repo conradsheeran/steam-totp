@@ -1,6 +1,6 @@
 {
  "name": "steam-totp",
- "version": "1.2.0",
+ "version": "1.2.1",
  "description": "A library developed using the ArkTS language to obtain Steam mobile authentication codes | 使用 ArkTS 语言开发的实现获取 Steam 手机令牌验证码的库",
  "main": "Index.ets",
  "author": "Yang He",
